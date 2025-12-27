@@ -1,12 +1,17 @@
 Param(
-  [string]$GithubUser,
-  [string]$Email,
+  [string]$GithubUser = "huruzun",
+  [string]$Email = "huruzun@163.com",
   [string]$RepoName = "strategy_backtest",
   [string]$Token = ""
 )
 $ErrorActionPreference = "Stop"
 $repoPath = Split-Path -Parent $MyInvocation.MyCommand.Path
 Set-Location $repoPath
+
+# Try to read token from .token file if not provided
+if ($Token -eq "" -and (Test-Path ".token")) {
+    $Token = (Get-Content ".token").Trim()
+}
 try {
   git --version | Out-Null
 } catch {
