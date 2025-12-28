@@ -1,0 +1,9 @@
+services:
+  china-portfolio-visualizer:
+    build: .
+    container_name: china_portfolio_app
+    ports:
+      - "8501:8501"
+    restart: always
+    environment:
+      - TZ=Asia/Shanghai

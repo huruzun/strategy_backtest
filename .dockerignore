@@ -1,0 +1,13 @@
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.db
+.DS_Store
+.git
+.gitignore
+.vscode
+.idea
+*.png
+*.csv
+# 如果您希望镜像中包含初始数据，可以注释掉 *.csv
